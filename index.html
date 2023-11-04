@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>QR Code Generator</h1>
+
+        <form>
+            <label for="qr-text">Enter your text:</label>
+            <input type="text" id="qr-text" class="qr-text" aria-label="Text to encode in QR code" required>
+            
+            <label for="light-color">Light color:</label>
+            <input type="color" id="light-color" class="color light" aria-label="Select light color for QR code" value="#ffffff">
+            
+            <label for="dark-color">Dark color:</label>
+            <input type="color" id="dark-color" class="color dark" aria-label="Select dark color for QR code" value="#000000">
+            
+            <label for="qr-size">Select QR code size:</label>
+            <select id="qr-size" class="sizes" aria-label="Select QR code size">
+                <option value="100">100x100</option>
+                <option value="200">200x200</option>
+                <option value="300">300x300</option>
+                <option value="400" selected>400x400</option>
+            </select>
+        </form>
+
+        <div id="qr-code" class="qr-code" aria-label="Generated QR code"></div>
+
+        <div class="action-container">
+            <a href="#" id="download" class="download btn" download="QRCode.png">
+                <span>Download QR Code</span>
+                <i class="fas fa-download"></i>
+            </a>
+            <button id="share" class="btn share-btn">
+                <span>Share QR Code</span>
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
